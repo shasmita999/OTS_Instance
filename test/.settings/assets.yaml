@@ -1,0 +1,31 @@
+name: test
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /test/src
+        type: javaClasspath
+  - name: google.recdata
+  - name: google.recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /test/google.recdata
+        type: recsessionRecdata
+  - name: google.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 10.5.4.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.mobileweb'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EE735FB2FEBB70F382B23034333534
+    dependencies: 
+      - path: /test/google.recsession
+        type: testRecsession
+      - path: /test/oogle_co_in_105.ma
+        type: test#moeb.applicationPackage
+  - name: oogle_co_in_105.ma
+    type: moeb.applicationPackage
+  - name: src
+    resources: 
